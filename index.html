@@ -1,83 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>HAFALLA - CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <style>
+        body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; 
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .button {
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        border: 2px solid #333;
+        background-color: white;
+        color: #333;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+    }
+
+    .button:hover {
+        background-color: #333;
+        color: white;
+        transform: scale(1.05); 
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    </style>
 </head>
 <body>
 
-  <div class="cv">
+    <h2>How do you want to know me?</h2>
 
-    <div class="sidebar">
-      <img src="img.png" alt="Profile">
-      <h2>Jake Hasley R. Hafalla</h2>
-      <p>UI/UX</p>
-
-      <hr>
-
-      <p>Email: jake.hasley26@gmail.com</p>
-      <p>Phone: 09559218000</p>
-      <p>GitHub: jekping</a> </p>
-      <p>LinkedIn:</p>
-      <hr>
-
-      <p><b>Languages</b></p>
-      <p>Filipino, English</p>
-    </div>
-
-    <div class="main">
-
-      <div class="section">
-        <h3>Profile</h3>
-        <p>Hi! I'm currently an IT student an I'm interested in UI/UX, Web Development, and Network Administration.</p>
-      </div>
-
-      <div class="section">
-        <h3>Education</h3>
-        <ul>
-          <li><b>Polytechnic University of the Philippines, Sta. Mesa, Manila</b></li>
-          <ul>Diploma in Information Technology / 2023 - Present </ul>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Skills</h3>
-        <div class="skills">
-          <span>Java</span>
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Wordpress</span>
-          <span>Figma</span>
-          <span>Python</span>
-          <span>Docker</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <h3>Projects</h3>
-        <ul>
-          <li><b>Coffee Shop POS System</b> – Java-based system</li>
-          <li><b>School Classroom Feedback Survey Form</b> – Simple survey form project</li>
-          <li><b>Simple Counter</b> – simple project</li>
-          <li><b>Civil Registry</b> – Barangay services project</li>
-          <li><b>Library Book Record Managemnt System</b> – Python project</li>
-          
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Experience</h3>
-        <ul>
-          <li>EXP Digital Marketing Services - Internship (600hrs)</li>
-        </ul>
-      </div>
-      <h4>under construction</h4>
-    </div>
-
-  </div>
+    <button class="button" onclick="window.location.href='dev.html'">as a developer</button>
+    <button class="button" onclick="window.location.href='artist.html'">as an artist</button>
 
 </body>
 </html>
