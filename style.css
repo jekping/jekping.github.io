@@ -73,3 +73,20 @@ ul {
 li {
   margin-bottom: 5px;
 }
+
+.button {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  border-radius: 50px; /* Rounded pill shape */
+  font-family: sans-serif;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #5db8df;
+  color: #fff;
+}
