@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portifolio - Hafalla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  
+</style>
+</head>
+<body>
+
+<!--Custom Cursor-->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div> 
+
+<!-- ════════════════════════════
+     WATERMARK — bottom-right logo
+     ════════════════════════════ -->
+     
+<div class="watermark-corner" aria-hidden="true">
+  <img src="images/logo.png" style="width: 100%; height: auto; max-width: 50px;" alt="logo">
+  <span class="wm-label">© Jake Hasley R. Hafalla</span>
+</div>
+
+<!-- ════════════════════════════
+     NAVIGATION
+     ════════════════════════════ -->
+<nav id="main-nav">
+  <!-- PNG Logo — place your logo.png in the same folder as this file -->
+  <a href="#hero" class="nav-logo" id="nav-logo-link">
+    <img src="images/logo-header.png" alt="<ja/e> Logo" id="nav-logo-img"
+         onerror="this.style.display='none'; document.getElementById('nav-logo-badge').style.display='block';">
+    <span class="nav-logo-badge" id="nav-logo-badge">&lt;ja/e&gt;</span>
+  </a>
+
+  <!-- Links — disappear on scroll -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#designs">Designs</a></li>
+    <li><a href="#">Systems</a></li>
+    <li><a href="#cta-outer">Contact</a></li>
+  </ul>
+
+  <div class="nav-social">
+    <a href="https://www.instagram.com/_zkezke/" target="_blank" title="Instagram">IG</a>
+    <a href="https://www.facebook.com/hasl3y" target="_blank " title="Facebook">FB</a>
+    <a href="https://www.linkedin.com/in/jake-hasley-hafalla-511683383/" target="_blank" title="LinkedIn">IN</a>
+    <a href="https://github.com/jekping" target="_blank" title="GitHub">GH</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════
+     AIRPLANE CANVAS — full page
+     ════════════════════════════ -->
+<canvas id="airplane-canvas"></canvas>
+
+<!-- ════════════════════════════
+     HERO
+     ════════════════════════════ -->
+<section id="hero">
+  <p class="hero-tag">Portfolio · UI/UX · Graphic Design</p>
+  <h1 class="hero-name">Jake Hasley R. <span class="scratch">Hafalla</span></h1>
+  <p class="hero-subtitle">(future) UI/UX Designer</p>
+  <div class="hero-photo-wrap">
+    <svg class="hero-ring-svg" viewBox="0 0 256 256" fill="none">
+      <path d="M128 10 C190 10,246 66,246 128 C246 190,190 246,128 246 C66 246,10 190,10 128 C10 66,66 10,128 10Z"
+        stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="6 5" fill="none" opacity="0.28"/>
+    </svg>
+    <div class="hero-photo-circle">
+      <!-- Replace photo.jpg with your actual portrait -->
+      <img src="images/profile.png" alt="Jake Hasley R. Hafalla"
+           onerror="this.style.display='none';">
+      <span class="hero-photo-placeholder" id="photo-fallback" style="display:none;">
+        <br>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     ABOUT
+     ════════════════════════════ -->
+<section id="about">
+  <h2 class="section-title reveal">About me</h2>
+  <div class="stats-grid reveal">
+    <div class="stat-card">
+      <div class="stat-label">Projects</div>
+      <div class="stat-value" data-count="20">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Clients</div>
+      <div class="stat-value" data-count="10">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Coffee</div>
+      <div class="stat-value">∞</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     POSTER DESIGNS
+     ════════════════════════════ -->
+<section id="designs">
+  <h2 class="section-title reveal">Poster Designs</h2>
+  <div class="portfolio-grid reveal">
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/kalayaan.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/recruit.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/halloween.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     SHIRT DESIGNS
+     ════════════════════════════ -->
+<section>
+  <h2 class="section-title reveal">Shirt Designs</h2>
+  <div class="portfolio-grid reveal">
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/GUINTA design 2.png" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/GUINTA design 1.png" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/GUINTA design 2.png" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     LOGO DESIGNS
+     ════════════════════════════ -->
+<section id="skills">
+  <h2 class="section-title reveal">Logo Designs</h2>
+  <div class="portfolio-grid reveal">
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/dit34.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/commit.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
+    <div class="portfolio-card"><div class="portfolio-card-inner mock-logo-empty" style="border:2px dashed #ccc;">
+      <span style="font-family:'Caveat',cursive;font-size:22px;color:#bbb;">more soon...</span>
+      <div class="card-tag">&lt;ja/e&gt;</div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     CTA
+     ════════════════════════════ -->
+<div id="cta-outer">
+  <section id="cta" class="reveal">
+    <h2 class="cta-title">- Amazed? -</h2>
+    <p class="cta-sub">jakes on you! xd</p>
+    <a href="mailto:jake.hasley26@gmail.com" class="btn-talk">Let's Talk!</a>
+  </section>
+</div>
+
+<!-- ════════════════════════════
+     FOOTER
+     ════════════════════════════ -->
+<footer>
+  <p>© Jake Hasley R. Hafalla</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#cta-outer">Contact</a></li>
+  </ul>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
