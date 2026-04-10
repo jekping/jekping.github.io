@@ -1,6 +1,3 @@
-// ══════════════════════════════
-// PHOTO FALLBACK
-// ══════════════════════════════
 const photoImg = document.querySelector('.hero-photo-circle img');
 if (photoImg) {
   photoImg.addEventListener('error', () => {
@@ -8,35 +5,26 @@ if (photoImg) {
   });
 }
 
-// ══════════════════════════════
-// NAV LINKS — hide after scroll threshold
-// ══════════════════════════════
 const navLinks = document.getElementById('nav-links');
 window.addEventListener('scroll', () => {
   navLinks.classList.toggle('hidden', window.scrollY > 60);
 }, { passive: true });
 
-// ══════════════════════════════
-// PAPER AIRPLANE — scroll-driven, full page height
-// ══════════════════════════════
 const canvas = document.getElementById('airplane-canvas');
 const ctx    = canvas.getContext('2d');
 
 function resizeCanvas() {
-  // Match full document dimensions
   canvas.width  = Math.max(document.documentElement.scrollWidth, window.innerWidth);
   canvas.height = Math.max(document.documentElement.scrollHeight, window.innerHeight);
 }
 resizeCanvas();
 
-// Rebuild on resize with debounce
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => { resizeCanvas(); spline = buildSpline(); }, 200);
 });
 
-// Control points spanning full page width × height
 function buildControlPoints() {
   const W = canvas.width;
   const H = canvas.height;
@@ -91,7 +79,6 @@ function catmullRom(pts, segs = 60) {
 function buildSpline() { return catmullRom(buildControlPoints()); }
 let spline = buildSpline();
 
-// Scroll progress: 0 (top) → 1 (bottom of page)
 function scrollProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   return max > 0 ? Math.min(window.scrollY / max, 1) : 0;
