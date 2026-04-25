@@ -6,9 +6,50 @@ if (photoImg) {
 }
 
 const navLinks = document.getElementById('nav-links');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('is-active');
+    navLinks.classList.toggle('mobile-open');
+  });
+}
+
 window.addEventListener('scroll', () => {
   navLinks.classList.toggle('hidden', window.scrollY > 60);
+  
+  // Close the mobile menu automatically upon scrolling
+  if (mobileMenuBtn && mobileMenuBtn.classList.contains('is-active')) {
+    mobileMenuBtn.classList.remove('is-active');
+    navLinks.classList.remove('mobile-open');
+  }
 }, { passive: true });
+
+// ══════════════════════════════
+// THEME TOGGLE
+// ══════════════════════════════
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.body.classList.add('dark-mode');
+}
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+}
+
+// ══════════════════════════════
+// SKELETON LOADER
+// ══════════════════════════════
+window.addEventListener('load', () => {
+  const skeleton = document.getElementById('page-skeleton');
+  if (skeleton) {
+    setTimeout(() => skeleton.classList.add('loaded'), 400);
+  }
+});
 
 const canvas = document.getElementById('airplane-canvas');
 const ctx    = canvas.getContext('2d');
@@ -91,12 +132,13 @@ function drawTrail(idx) {
   ctx.save();
   ctx.setLineDash([5, 8]);
   ctx.lineWidth = 1.8;
+  const isDark = document.body.classList.contains('dark-mode');
   for (let i = start; i < idx; i++) {
     const a = 0.05 + 0.55 * ((i - start) / Math.max(1, idx - start));
     ctx.beginPath();
     ctx.moveTo(spline[i].x, spline[i].y);
     ctx.lineTo(spline[i+1].x, spline[i+1].y);
-    ctx.strokeStyle = `rgba(70,70,70,${a})`;
+    ctx.strokeStyle = isDark ? `rgba(200,200,200,${a})` : `rgba(70,70,70,${a})`;
     ctx.stroke();
   }
   ctx.setLineDash([]);
@@ -108,6 +150,7 @@ function drawPlane(x, y, angle) {
   ctx.translate(x, y);
   ctx.rotate(angle);
   ctx.scale(0.9, 0.9);
+  const isDark = document.body.classList.contains('dark-mode');
   // Wings
   ctx.beginPath();
   ctx.moveTo(26, 0);
@@ -115,19 +158,19 @@ function drawPlane(x, y, angle) {
   ctx.lineTo(-7,  0);
   ctx.lineTo(-14, 11);
   ctx.closePath();
-  ctx.fillStyle = '#1a1a1a';
+  ctx.fillStyle = isDark ? '#f8f9fa' : '#1a1a1a';
   ctx.fill();
   // Centre crease
   ctx.beginPath();
   ctx.moveTo(26, 0); ctx.lineTo(-7, 0);
-  ctx.strokeStyle = '#f5f2ed';
+  ctx.strokeStyle = isDark ? '#121212' : '#f5f2ed';
   ctx.lineWidth = 1.5;
   ctx.stroke();
   // Tail lines
   ctx.beginPath();
   ctx.moveTo(-7,  0); ctx.lineTo(-17, -4);
   ctx.moveTo(-7,  0); ctx.lineTo(-17,  4);
-  ctx.strokeStyle = 'rgba(26,26,26,0.22)';
+  ctx.strokeStyle = isDark ? 'rgba(248,249,250,0.4)' : 'rgba(26,26,26,0.22)';
   ctx.lineWidth = 1;
   ctx.stroke();
   ctx.restore();
@@ -198,7 +241,7 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
     const dx = (e.clientX - r.left - r.width/2)  / (r.width/2);
     const dy = (e.clientY - r.top  - r.height/2) / (r.height/2);
     card.style.transform = `translate(-5px,-5px) perspective(600px) rotateY(${dx*7}deg) rotateX(${-dy*7}deg) rotate(-0.5deg)`;
-    card.style.boxShadow = '8px 8px 0 #1a1a1a';
+    card.style.boxShadow = 'var(--shadow-lg)';
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
