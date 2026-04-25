@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portifolio - Hafalla</title>
+<title>Portfolio - Hafalla</title>
 <link rel="icon" href="images/LOGOs/logo-icon white.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css">
@@ -28,18 +28,43 @@
     <span class="nav-logo-badge" id="nav-logo-badge">&lt;ja/e&gt;</span>
   </a>
 
+  <!-- Hamburger Menu Button -->
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
   <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li class="has-dropdown">
       <a href="#0" class="dropdown-trigger">Designs <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="#designs">Posters</a></li>
-        <li><a href="#designs">Shirts</a></li>
-        <li><a href="#designs">Logo</a></li>
+        <li><a href="#posters">Posters</a></li>
+        <li><a href="#shirts">Shirts</a></li>
+        <li><a href="#logos">Logo</a></li>
       </ul>
     </li>
     <li><a href="#">Systems</a></li>
     <li><a href="#cta-outer">Contact</a></li>
+    <li>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+      </button>
+    </li>
   </ul>
 
   <div class="nav-social">
@@ -89,7 +114,7 @@
   </div>
 </section>
 
-<section id="designs">
+<section id="posters">
   <h2 class="section-title reveal">Poster Designs</h2>
   <div class="portfolio-grid reveal">
     <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/kalayaan.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
@@ -98,7 +123,7 @@
   </div>
 </section>
 
-<section>
+<section id="shirts">
   <h2 class="section-title reveal">Shirt Designs</h2>
   <div class="portfolio-grid reveal">
     <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/GUINTA design 2.png" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
@@ -107,13 +132,13 @@
   </div>
 </section>
 
-<section id="skills">
+<section id="logos">
   <h2 class="section-title reveal">Logo Designs</h2>
   <div class="portfolio-grid reveal">
     <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/dit34.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
     <div class="portfolio-card"><div class="portfolio-card-inner"><img src="images/commit.jpg" alt="araw ng kalayaan" style="width: 100%; height: 100%; object-fit: contain;"></div></div>
     <div class="portfolio-card"><div class="portfolio-card-inner mock-logo-empty" style="border:2px dashed #ccc;">
-      <span style="font-family:'Caveat',cursive;font-size:22px;color:#bbb;">more soon...</span>
+      <span style="font-family:'Caveat',cursive;font-size:var(--text-xl);color:#bbb;">more soon...</span>
       <div class="card-tag">&lt;ja/e&gt;</div>
     </div></div>
   </div>
@@ -131,8 +156,8 @@
   <p>© Jake Hasley R. Hafalla</p>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#skills">Skills</a></li>
+    <li><a href="#posters">Work</a></li>
+    <li><a href="#logos">Skills</a></li>
     <li><a href="#cta-outer">Contact</a></li>
   </ul>
 </footer>
