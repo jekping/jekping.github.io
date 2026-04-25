@@ -100,7 +100,6 @@ nav {
   display: none;
 }
 
-/* Nav links — fade+slide up when scrolled */
 .nav-links {
   display: flex;
   gap: 36px;
@@ -136,6 +135,77 @@ nav {
 }
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.has-dropdown {
+  position: relative;
+}
+.dropdown-arrow {
+  font-size: 9px;
+  margin-left: 3px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  border: 2px solid var(--ink);
+  list-style: none;
+  min-width: 160px;
+  padding: 6px 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 600;
+}
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid var(--ink);
+  z-index: -1;
+}
+
+.dropdown-menu::after {
+  content: "";
+  position: absolute;
+  top: -15px; /* Covers the 12px gap + a little extra */
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: transparent;
+  z-index: -1;
+}
+
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 18px;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.30s;
+}
+.dropdown-menu li a:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.dropdown-menu li a::after {
+  display: none;
 }
 
 .nav-social {
